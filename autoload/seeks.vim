@@ -16,7 +16,7 @@ function! s:Search(query)
     redraw
     echo "Searching ..."
 
-    let url = g:seeks_node . '/search?output=json&q=' . webapi#http#encodeURI(a:query)
+    let url = g:seeks_node . '/search?output=json&q=site:developer.mozilla.org' . webapi#http#encodeURI(a:query)
     let json = webapi#http#get(url)
     let results = webapi#json#decode(json.content)
 
